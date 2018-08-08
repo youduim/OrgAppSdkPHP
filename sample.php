@@ -6,8 +6,7 @@ $ydapi = new YdApi(AESKEY, APPID, BUIN);
 /*
     获取token
 */
-$result = $ydapi->EncryptMsg(time());
-list($errcode, $encrypt) = $ydapi->EncryptMsg($msg);
+list($errcode, $encrypt) = $ydapi->EncryptMsg(time());
 if ($errcode === 0) {
     list($errcode, $rsp) = $ydapi->GetToken(API_GET_TOKEN, $encrypt);
     if ($errcode === 0) {
